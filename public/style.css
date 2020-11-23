@@ -1,0 +1,135 @@
+#hydraLink {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+#hydraLink > img:hover {
+  box-shadow: 0 0 0.125rem 0.125rem white,
+              0 0 0.25rem 0.25rem black;
+}
+
+#hydraLink > img {
+  height: 3rem;
+  border-radius: 0.25rem;
+}
+
+body {
+  background-color: #fff;
+  font-family: sans-serif;
+}
+
+.environment {
+  display: flex;
+} 
+
+details {
+  margin-top: 0.5rem;
+  position: relative;
+  width: 600px;
+}
+
+#copyCode {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+#consoleEl {
+  overflow-x: hidden;
+}
+
+body.maxCanvas svg.blocklySvg text {
+  fill: white !important;
+}
+
+body.maxCanvas svg.blocklySvg {
+  background: rgba(0,0,0,0) !important;
+}
+
+body.maxCanvas .blocklyMainBackground {
+  stroke: none;
+}
+
+body.maxCanvas .blocklyFlyout path,
+body.maxCanvas svg.blocklySvg path,
+body.maxCanvas svg.blocklySvg .blocklyFieldRect {
+  fill: rgba(0,0,0,0.25) !important;
+}
+
+body.maxCanvas .geras-renderer.classic-theme .blocklySelected>.blocklyPath {
+  stroke-width: 1px;
+}
+
+body.maxCanvas .blocklyFlyout path {
+  fill: rgba(0,0,0,0.5) !important;
+}
+
+body.maxCanvas {
+  text-shadow: 1px  1px 1px black,
+              -1px  1px 1px black,
+               1px -1px 1px black,
+              -1px -1px 1px black; 
+}
+
+.blocklyContextMenu *,
+.blocklyTooltipDiv,
+.blocklyDropDownDiv {
+  text-shadow: none !important;
+}
+
+
+body.maxCanvas .blocklyText {
+  text-shadow: none;
+}
+
+
+body.maxCanvas .blocklyToolboxDiv {
+  background: rgba(0,0,0,0) !important;
+}
+
+body.maxCanvas {
+  background: black;
+  color: white !important;
+}
+
+body.maxCanvas #blocklyDiv {
+  width: 100% !important;
+}
+
+body.maxCanvas #hydraCanvas {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100% !important;
+  height: 100% !important;
+  z-index: -1;
+}
+
+body.maxCanvas details {
+  width: 100%;
+}
+
+body.maxCanvas #hydraCanvas.moveToTop {
+  z-index: 100;
+}
+
+#overlay {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+#overlay.hidden {
+  display: none;
+}
