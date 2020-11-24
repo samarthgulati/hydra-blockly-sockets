@@ -41,6 +41,21 @@ details {
   overflow-x: hidden;
 }
 
+body.maxCanvas {
+  display: flex;
+  height: calc(100vh - 1rem);
+  overflow: hidden;
+  flex-direction: column;
+}
+
+body.maxCanvas details[open] {
+  overflow: auto;
+}
+
+body.maxCanvas .environment {
+  flex: 1;
+}
+
 body.maxCanvas svg.blocklySvg text {
   fill: white !important;
 }
