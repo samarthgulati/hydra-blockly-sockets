@@ -5,26 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hydra Blockly</title>
   <link rel="stylesheet" href="style.css">
-  <style>
-    modal-el > section,
-    modal-el > section > div,
-    modal-el > section > form {
-      display: flex;
-      flex-direction: column;
-    }
-
-    modal-el > section > form,
-    .receiver modal-el div {
-      display: none;
-    }
-    .receiver modal-el form {
-      display: flex;
-    }
-  </style>
 </head>
-<body class="maxCanvas receiver">
+<body class="maxCanvas">
   <a id="hydraLink" href="https://github.com/ojack/hydra-synth" target="_blank">
-    <img src="hydra.png" alt="powered by Hydra">
+    <img src="./hydra.png" alt="powered by Hydra">
   </a>
   <nav>
     <label for="liveUpdate">Live Update</label>
@@ -33,22 +17,7 @@
     <label for="maxCanvas">Maximize Canvas</label>
     <input type="checkbox" id="maxCanvas" checked>
     <button id="saveBtn">Save</button>
-    <button id="handshake">Handshake</button>
   </nav>
-  <modal-el>
-    <section slot="content">
-      <form>
-        <label for="incoming">Enter code:</label>
-        <textarea id="incoming"></textarea>
-        <button type="submit">submit</button>
-      </form>
-      <br/>
-      <div>
-        <label for="incoming">Copy code:</label>
-        <textarea id="outgoing"></textarea>
-      </div>
-    </section>
-  </modal-el>
   <div class="environment">
     <div id="blocklyDiv" style="height: 480px; width: 600px;"></div>
 	  <canvas id="hydraCanvas"></canvas>
@@ -65,7 +34,6 @@
   </div>
   <script src="https://cdn.jsdelivr.net/npm/blockly@3.20200402.1/blockly.min.js"></script>
   <script src="./json-url/json-url.js"></script>
-  <script src="./modal-el.js"></script>
   <!-- <script src="https://unpkg.com/hydra-synth"></script> -->
   <script src="hydra-synth.js"></script>
   <script src="image-editing-glsl-functions.js"></script>

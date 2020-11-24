@@ -6,6 +6,10 @@ var hydra = new Hydra({
 	canvas: hydraCanvas
 });
 
+if(location.hash === '#transmitter') {
+  document.body.setAttribute('id', 'transmitter');
+}
+
 function flatten(arr) {
   return arr.reduce(function(result, val) {
     return result.concat(val)

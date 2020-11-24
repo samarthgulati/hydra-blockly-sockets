@@ -153,8 +153,11 @@ function saveToURL() {
   // searchParams.set('state', btoa(JSON.stringify(state)));
   jsonUrl.compress({xmlText}).then(stateParam => { 
 		updateURL(stateParam);
-    // console.log(server, server.ready, all.length > 0)
-		if(server && server.ready && all.length > 0) server.send({ type: "data", data: stateParam });
+		if( document.body.hasAttribute('id') && 
+		  document.body.getAttribute('id') === 'transmitter' &&
+			server && server.ready && all.length > 0) {
+			server.send({ type: "data", data: stateParam });
+		}
     hideOverlay();
   });
 }
@@ -205,5 +208,12 @@ workspace.scrollbar.hScroll.svgGroup_.style.display = 'none';
 workspace.addChangeListener(updateCanvas);
 hydraCanvas.addEventListener('dblclick', function(e) {
 	hydraCanvas.classList.toggle('moveToTop');
+});
+document.addEventListener('keydown', function(e) {
+	if((e.ctrlKey || e.metaKey) && e.key === 's') {
+		e.preventDefault();
+		saveToURL();
+		return false;
+	}
 });
 loadFromURL();
